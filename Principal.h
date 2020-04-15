@@ -9,6 +9,9 @@ class Principal{
         Pessoa Simao;
         Pessoa Camis;
 
+        //Objeto agregado à classe Principal
+        Universidade UTFPR;
+
     public:
         Principal();
         void Executar();
