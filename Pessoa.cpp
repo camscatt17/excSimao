@@ -16,6 +16,7 @@ void Pessoa::inicializa(int dia, int mes, int ano, char* nome){
     this->mes = mes;
     this->ano = ano;
     strcpy(this->nome, nome);
+    uni->setNome("UTFPR");
 }
 
 void Pessoa::calcIdade(int dia, int mes, int ano){
@@ -34,4 +35,12 @@ void Pessoa::calcIdade(int dia, int mes, int ano){
 
 int Pessoa::getIdade(){
     return idade;
+}
+
+void Pessoa::setUni(Universidade* uni){
+    this->uni = uni;
+}
+
+void Pessoa::ondeTrabalho(){
+    cout << nome << " trabalha na " << uni->getNome() << "!" << endl;
 }

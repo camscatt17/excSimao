@@ -8,5 +8,7 @@ Principal::Principal(){
 
 void Principal::Executar(){
     Simao.calcIdade(15,04,2020);
+    Simao.ondeTrabalho();
     Camis.calcIdade(15,04,2020);
+    Camis.ondeTrabalho();
 }
