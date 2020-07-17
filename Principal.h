@@ -1,11 +1,11 @@
 #include "Pessoa.h"
 
-using namespace std;
-
 class Principal{
     private: 
         Pessoa Simao;
         Pessoa Camis;
+
+        int dia, mes, ano;
 
     public:
         Principal();

@@ -1,4 +1,5 @@
 #include "Pessoa.h"
+#include <string.h>
 #include <iostream>
 using std::cout;
 using std::endl;
@@ -7,11 +8,11 @@ Pessoa::Pessoa(){
     inicializa(0,0,0, "");
 }
 
-Pessoa::Pessoa(int dia, int mes, int ano, char* nome){
+Pessoa::Pessoa(int dia, int mes, int ano, const char* nome){
     inicializa(dia, mes, ano, nome);
 }
 
-void Pessoa::inicializa(int dia, int mes, int ano, char* nome){
+void Pessoa::inicializa(int dia, int mes, int ano, const char* nome){
     this->dia = dia;
     this->mes = mes;
     this->ano = ano;

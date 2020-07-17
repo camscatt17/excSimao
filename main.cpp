@@ -2,7 +2,7 @@
 #include "Principal.h"
 
 int main(){
-    Principal obj;
+    Principal sistema;
     
     getchar();
     return 0;
