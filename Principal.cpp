@@ -1,5 +1,4 @@
 #include "Principal.h"
-#include "Pessoa.h"
 #include <time.h>
 
 using std::cin;
