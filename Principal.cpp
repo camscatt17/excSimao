@@ -5,7 +5,7 @@ using std::cin;
 using std::cout;
 using std::endl;
 
-Principal::Principal(){
+Principal::Principal(): Simao(), Camis() {
     Simao.inicializa(3,10,1976, "Jean Simao");
     Camis.inicializa(17,01,1997, "Camila Santos");
 
@@ -13,6 +13,10 @@ Principal::Principal(){
     cin >> dia >> mes >> ano;
 
     Executar();
+}
+
+Principal::~Principal(){
+    
 }
 
 void Principal::Executar(){
