@@ -34,9 +34,18 @@ void Pessoa::calcIdade(int dia, int mes, int ano){
         }
     }
 
-    cout << "A idade da Pessoa "<< this->nome << " seria " << idade << endl;
+    cout << "A idade de "<< this->nome << ": " << idade << endl;
 }
 
 int Pessoa::getIdade(){
     return idade;
 }
+
+void Pessoa::setUni(Universidade* pUni){
+    this->pUni = pUni;
+}
+
+void Pessoa::ondeTrabalha(){
+    cout << this->nome << " trabalha em " << this->pUni->getNome() << endl;
+}
+
