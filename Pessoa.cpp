@@ -49,3 +49,10 @@ void Pessoa::ondeTrabalha(){
     cout << this->nome << " trabalha em " << this->pUni->getNome() << endl;
 }
 
+void Pessoa::setDpto(Departamento* pDpto){
+    this->pDpto = pDpto;
+}
+
+void Pessoa::DptoOndeTrabalha() {
+    cout << this->nome << " trabalha no Dpto " << this->pDpto->getNomeDpto() << endl;
+}

@@ -1,12 +1,14 @@
 #pragma once
 #include <iostream>
 #include "Universidade.h"
+#include "Departamento.h"
  
 class Pessoa{
     private:
         int dia, mes, ano, idade;
         char nome[30];
         Universidade* pUni; //cria a associação (tpo de relação mais fraca)
+        Departamento* pDpto;
 
     public:
         Pessoa();
@@ -19,5 +21,9 @@ class Pessoa{
         //inicializa o ponteiro e permite a passagem do endereço
         void setUni(Universidade* pUni);
         void ondeTrabalha();
+
+        //agregação da classe Dpto
+        void setDpto(Departamento* pDpto);
+        void DptoOndeTrabalha();
 };
 
