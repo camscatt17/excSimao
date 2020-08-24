@@ -137,13 +137,30 @@
 											"height": 13,
 											"text": "-nome[30]: char",
 											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAFzsQw5nJkUAQk=",
+											"_parent": {
+												"$ref": "AAAAAAFzo3HU83mFi4w="
+											},
+											"model": {
+												"$ref": "AAAAAAFzsQw5WZkRDNE="
+											},
+											"font": "Arial;13;0",
+											"left": 309,
+											"top": 413,
+											"width": 263.4072265625,
+											"height": 13,
+											"text": "-uni: Universidade",
+											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 304,
 									"top": 393,
 									"width": 273.4072265625,
-									"height": 23
+									"height": 38
 								},
 								{
 									"_type": "UMLOperationCompartmentView",
@@ -166,7 +183,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 309,
-											"top": 421,
+											"top": 436,
 											"width": 263.4072265625,
 											"height": 13,
 											"text": "«create»+Departamento()",
@@ -183,7 +200,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 309,
-											"top": 436,
+											"top": 451,
 											"width": 263.4072265625,
 											"height": 13,
 											"text": "«destroy»+Departamento()",
@@ -200,7 +217,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 309,
-											"top": 451,
+											"top": 466,
 											"width": 263.4072265625,
 											"height": 13,
 											"text": "+setNomeDpto(nome: const char*): void",
@@ -217,7 +234,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 309,
-											"top": 466,
+											"top": 481,
 											"width": 263.4072265625,
 											"height": 13,
 											"text": "+getNomeDpto(): char*",
@@ -226,7 +243,7 @@
 									],
 									"font": "Arial;13;0",
 									"left": 304,
-									"top": 416,
+									"top": 431,
 									"width": 273.4072265625,
 									"height": 68
 								},
@@ -417,7 +434,7 @@
 											"top": 421,
 											"width": 278.71435546875,
 											"height": 13,
-											"text": "-dpto: Departamento",
+											"text": "-dpto: Departamento*[50]",
 											"horizontalAlignment": 0
 										}
 									],
@@ -693,9 +710,9 @@
 										"$ref": "AAAAAAFzo4AcGHrIlNw="
 									},
 									"font": "Arial;13;0",
-									"left": 589,
+									"left": 584,
 									"top": 453,
-									"width": 19.5126953125,
+									"width": 28.91357421875,
 									"height": 13,
 									"alpha": -0.5235987755982988,
 									"distance": 25,
@@ -703,7 +720,7 @@
 										"$ref": "AAAAAAFzo4AcGHrLcEw="
 									},
 									"edgePosition": 2,
-									"text": "1"
+									"text": "1..50"
 								},
 								{
 									"_type": "EdgeLabelView",
@@ -1729,7 +1746,7 @@
 								"reference": {
 									"$ref": "AAAAAAFzo3HU8Xl9WGk="
 								},
-								"multiplicity": "1"
+								"multiplicity": "1..50"
 							},
 							"end2": {
 								"_type": "UMLAssociationEnd",
@@ -1754,6 +1771,18 @@
 							"name": "nome[30]",
 							"visibility": "private",
 							"type": "char"
+						},
+						{
+							"_type": "UMLAttribute",
+							"_id": "AAAAAAFzsQw5WZkRDNE=",
+							"_parent": {
+								"$ref": "AAAAAAFzo3HU8Xl9WGk="
+							},
+							"name": "uni",
+							"visibility": "private",
+							"type": {
+								"$ref": "AAAAAAFzo3khdHnve74="
+							}
 						}
 					],
 					"operations": [
@@ -1851,9 +1880,8 @@
 							},
 							"name": "dpto",
 							"visibility": "private",
-							"type": {
-								"$ref": "AAAAAAFzo3HU8Xl9WGk="
-							}
+							"type": "Departamento*",
+							"multiplicity": "50"
 						}
 					],
 					"operations": [
