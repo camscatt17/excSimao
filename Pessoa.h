@@ -4,7 +4,7 @@
 #include "Departamento.h"
  
 class Pessoa{
-    private:
+    protected:
         int dia, mes, ano, idade;
         char nome[30];
         Universidade* pUni; //cria a associação (tpo de relação mais fraca)

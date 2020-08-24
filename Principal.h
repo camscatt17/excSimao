@@ -2,10 +2,10 @@
 #include "Pessoa.h"
 #include "Universidade.h"
 #include "Departamento.h"
+#include "Professor.h"
 
 class Principal{
     private: 
-        Pessoa Simao;
         Pessoa Camis;
 
         int dia, mes, ano;
@@ -17,6 +17,8 @@ class Principal{
         //Dpto é agregado aos objetos dessa classe
         Departamento DAINF;
         Departamento DGRH;
+
+        Professor Simao;
 
     public:
         Principal();
