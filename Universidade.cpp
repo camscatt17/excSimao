@@ -23,13 +23,13 @@ char* Universidade::getNome(){
     return this->nome;
 }
 
-void Universidade ::setDepartamento(Departamento* pdpto, int qtd){
-    Dpto[qtd]=pdpto;
+void Universidade ::setDepartamento(Departamento* pdpto){
+    LpDptos.push_back(pdpto);
 }
 
 void Universidade::imprimeDptos(){
-    for(int i = 0; i<50; i++ ){
-        if(Dpto[i] != NULL)
-            cout << Dpto[i]->getNomeDpto() << endl;
+    int tam = (int) LpDptos.size();
+    for(int i = 0; i < tam; i++){
+        cout << (LpDptos[i])->getNomeDpto() << endl;
     }
 }
