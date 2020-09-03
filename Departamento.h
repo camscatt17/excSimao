@@ -27,6 +27,7 @@ class Departamento {
         //Colabora na formação da lista encadeada
         void incluaDisciplina(Disciplina* pDisc);
         void listeDisciplina();
+        void listeDisciplina2();
 
 
 

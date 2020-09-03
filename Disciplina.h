@@ -9,14 +9,16 @@ class Disciplina {
 
         Departamento* pDeptoAssociado;
 
+        
     public:
         Disciplina(int id, const char* ac ="");
         ~Disciplina();
 
-        Disciplina* pProx;
-
         int getId();
         void setId(int id);
+
+        Disciplina* pProx;
+        Disciplina* pAnte;
 
         void setNome(const char* nome);
         char* getNome();

@@ -6,6 +6,7 @@ Disciplina::Disciplina(int id, const char* ac){
     this->id = id;
     pDeptoAssociado = NULL;
     pProx = NULL;
+    pAnte = NULL;
 
     strcpy(area_conhecimento,ac);
 }
@@ -13,6 +14,7 @@ Disciplina::Disciplina(int id, const char* ac){
 Disciplina::~Disciplina(){
     pDeptoAssociado = NULL;
     pProx = NULL;
+    pAnte = NULL;
 }
 
 void Disciplina::setId(int id){
@@ -33,6 +35,7 @@ char* Disciplina::getNome(){
 
 void Disciplina::setDpto(Departamento* pDpto){
     pDeptoAssociado = pDpto;
+    pDpto->incluaDisciplina(this);
 }
 
 Departamento* Disciplina::getDpto(){

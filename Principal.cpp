@@ -44,6 +44,7 @@ void Principal::inicializaProf(){
 
 void Principal::inicializaDiscip(){
     TecProgComp.setNome("Tec Prog");
+    TecProgComp.setDpto(&DAINF);
     DAINF.incluaDisciplina(&TecProgComp);
 }
 

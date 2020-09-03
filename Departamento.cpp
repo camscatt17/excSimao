@@ -1,7 +1,9 @@
-#include <stdio.h>
+#include <iostream>
 #include "Departamento.h"
 #include "Disciplina.h"
 #include "Universidade.h"
+
+using namespace std;
 
 Departamento::Departamento(){
     pDisciplPrim = NULL; //toda vez que existir ponteiros, uma boa prática é aterra-los logo de cara
@@ -35,10 +37,27 @@ void Departamento::incluaDisciplina(Disciplina* pDisc){
         pDisciplAtual = pDisc;
     } else {
        pDisciplAtual->pProx = pDisc;
+       pDisc->pAnte = pDisciplAtual;
        pDisciplAtual = pDisc;
     }
 }
 
 void Departamento::listeDisciplina(){
+    Disciplina* pAux;
+    pAux = pDisciplPrim;
+    while(pAux != NULL){
+        count << "A disciplina " << pAux->getNome() <<" pertence ao departamento" <<
+        nome << endl;
+        pAux = pAux->pProx;
+    }
+}
 
+void Departamento::listeDisciplina2(){
+    Disciplina* pAux;
+    pAux = pDisciplAtual;
+    while(pAux != NULL){
+        count << "A disciplina " << pAux->getNome() <<" pertence ao departamento" <<
+        nome << endl;
+        pAux = pAux->pAnte;
+    }
 }
