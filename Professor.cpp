@@ -4,10 +4,11 @@
 using std::cout;
 using std::endl;
 
-Professor::Professor(int dia, int mes, int ano, const char* nome):
+Professor::Professor(int dia, int mes, int ano, const char* nome, const char* dominio):
 Pessoa(dia, mes, ano, nome){
     pUnivFil = NULL;
     pDptoFil = NULL;
+    strcpy(this->dominio, dominio);
 }
 
 Professor::Professor():
@@ -27,6 +28,14 @@ void Professor::setUnivFil(Universidade* pUni){
 
 void Professor::setDptoFil(Departamento* pDpto){
     pDptoFil = pDpto;
+}
+
+void Professor::setDominio(const char* dominio){
+    this->dominio = dominio;
+}
+
+char* Professor::getDominio(){
+    return dominio;
 }
 
 void Professor::ondeTrabalho(){

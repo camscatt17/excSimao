@@ -1,44 +1,71 @@
 #include "Principal.h"
+#include <studio.h>
 
 using std::cin;
 using std::cout;
 using std::endl;
 
 Principal::Principal(): Simao(), Camis(), UTFPR(), TJPR() {
-    Simao.inicializa(3,10,1976, "Jean Simao");
-    Camis.inicializa(17,01,1997, "Camila Santos");
+    //leitura da data atual
+    cout << "Informe o dia/ mes/ ano." << endl; 
+    cin >> dia >> mes >> ano;  
 
-    //Coloca o nome das universidades
-    UTFPR.setNome("UTFPR");
-    TJPR.setNome("TJPR");
-
-    //coloca o nome dos Dptos
-    DAINF.setNomeDpto("DAINF");
-    DGRH.setNomeDpto("DGRH");
-
-    //cout << "Informe o dia/ mes/ ano." << endl; 
-    //cin >> dia >> mes >> ano;
-
-    //associação entre os objetos simao e UTFPR
-    Simao.setUni(&UTFPR);
-    Camis.setUni(&TJPR);
-
-    //associação entre os objetos Simao e Camis e os respectivos dptos
-    Simao.setDpto(&DAINF);
-    Camis.setDpto(&DGRH);
-
-    Executar();
+    inicializa();
 }
 
 Principal::~Principal(){
-    
+
+}
+
+void Principal::inicializa(){
+    inicializaUniv();
+    inicializaDpto();
+    inicializaDiscip();
+    inicializaProf();
+}
+
+void Principal::inicializaUniv){
+    //Registro dos nomes das universidades
+    UTFPR.setNome("UTFPR");
+    TJPR.setNome("TJPR");
+}
+
+void Principal::inicializaDpto(){
+    DAINF.setNomeDpto("Departamento de informática");
+    DGRH.setNomeDpto("Divisão Geral dos Recursos Humanos");
+}
+
+void Principal::inicializaProf(){
+    Simao.inicializa(3, 10, 1976, "Jean Simão");
+    Simao.setUnivFiliado(&UTFPR);
+    Simao.setDominio("Computação");
+    Simao.setDptoFil(&DAINF);
+}
+
+void Principal::inicializaDiscip(){
+    TecProgComp.setNome("Tec Prog");
+    DAINF.incluaDisciplina(&TecProgComp);
+}
+
+void Principal::calcIdadeProf(){
+    Simao.calcIdade(dia, mes, ano);
+}
+
+void Principal::univOndeTrabalha(){
+    Simao.ondeTrabalha();
+}
+
+void Principal::dptoOndeTrabalha(){
+    Simao.DptoOndeTrabalha();
+}
+
+void Principal::listeDiscDeptos(){
+    DAINF.listeDisciplina();
 }
 
 void Principal::Executar(){
-    //Simao.calcIdade(dia, mes, ano);
-    Simao.ondeTrabalha();
-    Simao.DptoOndeTrabalha();
-    //Camis.calcIdade(dia, mes, ano);
-    Camis.ondeTrabalha();
-    Camis.DptoOndeTrabalha();
+    calcIdadeProf();
+    univOndeTrabalha();
+    dptoOndeTrabalha();
+    listeDiscDeptos();
 }
