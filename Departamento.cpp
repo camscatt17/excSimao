@@ -36,8 +36,8 @@ void Departamento::incluaDisciplina(Disciplina* pDisc){
         pDisciplPrim = pDisc;
         pDisciplAtual = pDisc;
     } else {
-       pDisciplAtual->pProx = pDisc;
-       pDisc->pAnte = pDisciplAtual;
+       pDisciplAtual->pProx->setPprox(pDisc);
+       pDisc->pAnte->setPante(pDisciplAtual);
        pDisciplAtual = pDisc;
     }
 }
@@ -48,7 +48,7 @@ void Departamento::listeDisciplina(){
     while(pAux != NULL){
         count << "A disciplina " << pAux->getNome() <<" pertence ao departamento" <<
         nome << endl;
-        pAux = pAux->pProx;
+        pAux = pAux->pProx->getPprox();
     }
 }
 
@@ -58,6 +58,6 @@ void Departamento::listeDisciplina2(){
     while(pAux != NULL){
         count << "A disciplina " << pAux->getNome() <<" pertence ao departamento" <<
         nome << endl;
-        pAux = pAux->pAnte;
+        pAux = pAux->pAnte->getPante() ;
     }
 }

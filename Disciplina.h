@@ -9,6 +9,9 @@ class Disciplina {
 
         Departamento* pDeptoAssociado;
 
+        Disciplina* pProx; 
+        Disciplina* pAnte;
+
         
     public:
         Disciplina(int id, const char* ac ="");
@@ -17,12 +20,16 @@ class Disciplina {
         int getId();
         void setId(int id);
 
-        Disciplina* pProx;
-        Disciplina* pAnte;
-
+        
         void setNome(const char* nome);
         char* getNome();
 
         void setDpto(Departamento* pdpto);
         Departamento* getDpto;
+
+        //Privei os ponteiros criando métodos de get e set
+        void setPprox(Disciplina* pProx);
+        Disciplina* getPprox();
+        void setPante(Disciplina* pAnte);
+        Disciplina* getPante();
 };

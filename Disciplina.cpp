@@ -41,3 +41,19 @@ void Disciplina::setDpto(Departamento* pDpto){
 Departamento* Disciplina::getDpto(){
     return pDeptoAssociado;
 }
+
+void Disciplina::setPprox(Disciplina* pProx){
+    this->pProx = pProx
+}
+
+Disciplina* Disciplina::getPprox(){
+    return this->pProx;
+}
+
+void Disciplina::setPante(Disciplina* pAnte){
+    this->pAnte = pAnte;
+}
+
+Disciplina* Disciplina::getPante(){
+    return this->pAnte;
+}
