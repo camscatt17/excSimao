@@ -4,6 +4,9 @@
 class Aluno : public Pessoa{
     private:
         int RA;
+        
+        Aluno *pProx;
+        Aluno *pAnte;
 
     public:
         Aluno(int dia, int mes, int ano, const char* nome, int RA);
@@ -11,4 +14,9 @@ class Aluno : public Pessoa{
         ~Aluno();
         int getRA();
         void setRA(int RA);
+
+        void setPprox(Aluno* pProx);
+        Aluno* getPprox();
+        void setPante(Aluno* pAnte);
+        Aluno* getPante();
 };

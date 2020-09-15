@@ -22,6 +22,7 @@ void Principal::inicializa(){
     inicializaDpto();
     inicializaDiscip();
     inicializaProf();
+    inicializaAluno();
 }
 
 void Principal::inicializaUniv){
@@ -45,6 +46,11 @@ void Principal::inicializaProf(){
 void Principal::inicializaDiscip(){
     TecProgComp.setNome("Tec Prog");
     TecProgComp.setDpto(&DAINF);
+    TecProgComp.incluaAluno(&Camis);
+}
+
+void Principal::inicializaAluno(){
+    
 }
 
 void Principal::calcIdadeProf(){

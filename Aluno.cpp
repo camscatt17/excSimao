@@ -25,3 +25,19 @@ int Aluno::getRA(){
 void Aluno::setRA(int RA){
   this->RA = RA;  
 }
+
+void Aluno::setPprox(Aluno* pProx){
+  this->pProx = pProx;
+}
+
+Aluno* Aluno::getPprox(){
+  return this->pProx;
+}
+
+void Aluno::setPante(Aluno* pAnte){
+  this->pAnte = pAnte;
+}
+
+Aluno* Aluno::getPante(){
+  return this->pAnte;
+}

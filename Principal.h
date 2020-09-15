@@ -24,6 +24,7 @@ class Principal{
 
         Professor Simao;
 
+
     public:
         Principal();
         ~Principal();
@@ -34,6 +35,7 @@ class Principal{
         void inicializaDpto();
         void inicializaDiscip();
         void inicializaProf();
+        void inicializaAluno();
 
         void Executar();
 
@@ -41,4 +43,5 @@ class Principal{
         void univOndeTrabalha();
         void dptoOndeTrabalha();
         void listeDiscDeptos();
+        void listaAlunoDisc();
 };
