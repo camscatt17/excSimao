@@ -20,12 +20,14 @@ Disciplina::Disciplina(int id, int num_alunos, const char* ac){
 
 Disciplina::~Disciplina(){
     pDeptoAssociado = NULL;
+    ElAluno* paux; //ponteiro para ElAluno
+    paux = pElAlunoPrim;
 
-    pProx = NULL;
-    pAnte = NULL;
-
-    pAlunoPrim = NULL;
-    pAlunoAtual = NULL;
+    while(pElAlunoPrim != NULL){
+        pElAlunoPrim = pElAlunoPrim->getpProx();
+        delete paux;
+        paux = pElAlunoPrim;
+    }
 }
 
 void Disciplina::setId(int id){
@@ -70,15 +72,19 @@ Disciplina* Disciplina::getPante(){
 }
 
 void Disciplina::incluaAluno(Aluno* pa){
-    if((cont_alunos <num_alunos) && (pa!= NULL)){
-        if(pAlunoPrim == NULL){
-            pAlunoPrim = pa;
-            pAlunoAtual = pa;
+    ElAluno* paux = NULL;
+    paux = new ElAluno();
+    paux->setAluno(pa);
+
+    if((cont_alunos < num_alunos) && (pa!= NULL)){
+        if(pElAlunoPrim == NULL){
+            pElAlunoPrim = paux;
+            pElAlunoAtual = paux;
         }
         else{
-            pAlunoAtual->setPprox(pa);
-            pa->setPante(pAlunoAtual);
-            pAlunoAtual = pa;
+            pElAlunoAtual->setPprox(pa);
+            paux->setPante(pElAlunoAtual);
+            pElAlunoAtual = paux;
         }
         cont_alunos++;
     }
@@ -89,8 +95,8 @@ void Disciplina::incluaAluno(Aluno* pa){
 }
 
 void Disciplina::listaAluno(){
-    Aluno* pAux;
-    pAux = pAlunoAtual;
+    ElAluno* pAux;
+    pAux = pElAlunoAtual;
     while(pAux != NULL){
         count << "Aluno " << pAux->getNome() << " matriculado em " << getNome() << endl;
         pAux = pAux->getPprox();
@@ -98,8 +104,8 @@ void Disciplina::listaAluno(){
 }
 
 void Disciplina::listaAluno2(){
-    Aluno* pAux;
-    pAux = pAlunoAtual;
+    ElAluno* pAux;
+    pAux = pElAlunoAtual;
     while(pAux != NULL){
         cout << "Aluno " << pAux->getNome() << " matriculado em " << getNome() << endl;
         pAux = pAux->getPante();

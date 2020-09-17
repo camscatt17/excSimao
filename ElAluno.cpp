@@ -27,3 +27,19 @@ Aluno* ElAluno::getAluno(){
 char* ElAluno::getNome(){
     return pAl->getNome();
 }
+
+ElAluno* ElAluno::getpProx(){
+    return pProx;
+}
+
+void ElAluno::setpProx(ElAluno* pProx){
+    this->pProx = pProx;
+}
+
+ElAluno* ElAluno::getpAnte(){
+    return pAnte;
+}
+
+void ElAluno::setpAnte(ElAluno* pAnte){
+    this->pAnte = pAnte;
+}

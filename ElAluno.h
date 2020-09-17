@@ -13,4 +13,10 @@ class ElAluno {
         void setAluno(Aluno* pa);
         Aluno* getAluno();
         cha* getNome();
+
+        ElAluno* getpProx();
+        void setpProx(ElAluno* pProx);
+        ElAluno* getpAnte();
+        void setpAnte(ElAluno* pAnte);
+
 };

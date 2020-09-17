@@ -1,6 +1,6 @@
 #pragma once
 #include "Departamento.h"
-#include "Aluno.h"
+#include "ElAluno.h"
 
 class Disciplina {
     private:
@@ -16,9 +16,8 @@ class Disciplina {
         int num_alunos;
         int cont_alunos;
 
-        Aluno *pAlunoPrim;
-        Aluno *pAlunoAtual;
-
+        ElAluno* pElAlunoPrim;
+        ElAluno* pElAlunoAtual;
         
     public:
         Disciplina(int id,int num_alunos = 45, const char* ac ="");
