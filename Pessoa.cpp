@@ -41,6 +41,14 @@ int Pessoa::getIdade(){
     return idade;
 }
 
+void Pessoa::setNome(cont char* nome){
+    this->nome = nome;
+}
+
+char* Pessoa::getNome(){
+    return nome;
+}
+
 void Pessoa::setUni(Universidade* pUni){
     this->pUni = pUni;
 }

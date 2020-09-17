@@ -17,6 +17,8 @@ class Pessoa{
         void inicializa(int dia, int mes, int ano, const char* nome);
         void calcIdade(int dia, int mes, int ano);
         int getIdade();
+        void setNome(const char* nome);
+        char* getNome();
 
         //inicializa o ponteiro e permite a passagem do endereço
         void setUni(Universidade* pUni);

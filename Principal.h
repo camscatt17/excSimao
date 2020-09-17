@@ -9,7 +9,7 @@ class Principal{
     private: 
         int dia, mes, ano;
 
-         Aluno Camis;
+        Aluno Camis;
 
         //UTFPR é agregada aos objetos dessa classe (tipo mais forte de relação) 
         Universidade UTFPR;

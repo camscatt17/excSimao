@@ -5,6 +5,7 @@
 Disciplina::Disciplina(int id, int num_alunos, const char* ac){
     this->id = id;
     this->num_alunos = num_alunos;
+    cont_alunos = 0;
 
     pDeptoAssociado = NULL;
 
@@ -81,6 +82,7 @@ void Disciplina::incluaAluno(Aluno* pa){
         }
         cont_alunos++;
     }
+    
     else{
         cout << "Aluno nao incluido. Turma já lotada!" << endl;
     }

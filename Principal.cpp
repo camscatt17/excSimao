@@ -69,9 +69,18 @@ void Principal::listeDiscDeptos(){
     DAINF.listeDisciplina();
 }
 
+void Principal::listaAlunoDis(){
+    TecProgComp.listaAluno();
+    count << endl;
+    TecProgComp.listaAluno2();
+    count << endl;
+
+}
+
 void Principal::Executar(){
     calcIdadeProf();
     univOndeTrabalha();
     dptoOndeTrabalha();
     listeDiscDeptos();
+    listaAlunoDis();
 }
